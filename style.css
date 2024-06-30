@@ -1,0 +1,244 @@
+/*
+familias
+font-family: "Jost", sans-serif;
+font-family: "Rajdhani", sans-serif;
+*/
+
+:root{
+  --salmon: #E19898;
+  --lila: #A2678A;
+  --violeta: #4D3C77;
+  --morado: #3F1D38;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*Esto mantiene el ancho y alto de los elementos a pesar del padding y border*/
+  font-family: "Rajdhani", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+body{
+  background-color: black;
+}
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  background-color: transparent;
+}
+.logo{
+  font-family: "Jost", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.navlist{
+  display: flex;
+}
+.navlist a{
+  margin-left: 60px;
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  transition: all .5s ease;
+}
+.navlist a:hover{
+  border-color: var(--salmon);
+  color: var(--salmon);
+}
+#menu-icon{
+  display: none;
+  color: white;
+  font-size: 35px;
+  z-index: 101;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+#menu-icon:hover{
+  color: var(--salmon);
+}
+#menu-toggle{
+  display: none;
+}
+.menu-toggle-action{
+  display: none;
+}
+.hero{
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(45deg, var(--violeta) 0%, var(--morado) 25%, black 75%);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+section{
+  padding: 0px 100px;
+}
+.hero-text h1{
+  font-family: "Jost", sans-serif;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+.hero-text h5{
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.hero-text h4{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero-text p{
+  font-size: 80%;
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+.hero-img img{
+  width: 400px;
+  margin: 10% 0 0 10%;
+  height: auto;
+  transition: all 5s linear;
+}
+.hero-img img:hover{
+  width: 450px;
+  opacity: 0.6;
+}
+.hero-text a{
+  display: inline-block;
+  background-color: var(--salmon);
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all .5s ease;
+}
+.hero-text a i{
+  margin-right: 8px;
+}
+.hero-text a:hover{
+  background-color: transparent;
+  border-color: var(--salmon);
+  transform: translateX(8px);
+}
+.hero-text a.wp{
+  background-color: transparent;
+  border: 1px solid var(--salmon);
+  margin-right: 20px;
+  transition: all .5s ease;
+}
+.hero-text a.wp:hover{
+  background-color: var(--salmon);
+}
+.icons{
+  position: absolute;
+  top: 50vh;
+  transform: translateY(-50%);
+  padding: 0 50px;
+}
+.icons i{
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all .5s ease;
+}
+.icons i:hover{
+  color: var(--salmon);
+  transform: translateY(-5px);
+}
+.scroll{
+  position: absolute;
+  bottom: 6%;
+  right: 3%;
+}
+.scroll i{
+  display: block;
+  padding: 12px;
+  font-size: 25px;
+  background-color: var(--salmon);
+  border-radius: 30px;
+  transition: all .5s ease;
+}
+.scroll i:hover{
+  transform: translateY(-5px);
+}
+@media (max-width:992px) {
+  section{
+    padding: 0 3%;
+    transition: .2s;
+  }
+  .hero-text{
+    padding-top: 0;
+  }
+  .hero-text p{
+    font-size: 70%;
+  }
+  .hero-img{
+    text-align: center;
+  }
+  .hero-img img{
+    width: 80%;
+    margin: 10% 0 0 10%;
+  }
+  .icons{
+    display: none;
+  }
+  .scroll{
+    display: none;
+  }
+}
+@media (max-width:678px){
+  .menu-toggle-action{
+    display: block;
+  }
+  #menu-icon{
+    display: block;
+  }
+  .hero-text{
+    text-align: center;
+    padding-top: 100px;
+  }
+  .hero-img img{
+    margin: 20px 0;
+  }
+  .hero{
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .navlist{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: var(--morado);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all 1s ease;
+  }
+  .navlist a{
+    display: block;
+    margin: 7px 0;
+  }
+  #menu-toggle:checked + label.menu-toggle-action + ul{
+    right: 0;
+  }
+}
